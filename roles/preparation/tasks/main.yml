@@ -1,8 +1,4 @@
 ---
-#- name: install PC components
-#  apt: name={{item}} state=present update_cache=yes
-  #with_items:
-
 - name: Download Team Viewer Latest Version
   get_url:
     url: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
@@ -10,16 +6,16 @@
     mode: 0774
 
 - name: Install Team Viewer Latest Version
-  apt: deb="/vagrant/binary/teamviewer_amd64.deb"
+  apt: deb="/home/vagrant/binary/teamviewer_amd64.deb"
 
 - name: Download Virtal Box Version 5.1
   get_url:
     url: https://download.virtualbox.org/virtualbox/5.1.38/virtualbox-5.1_5.1.38-122592~Ubuntu~bionic_amd64.deb
-    dest: /vagrant/binary/Ubuntu~bionic_amd64.deb
+    dest: /home/vagrant/binary/Ubuntu~bionic_amd64.deb
     mode: 0774
 
 - name: Install VirtualBox Version 5.1
-  apt: deb="/vagrant/binary/Ubuntu~bionic_amd64.deb"
+  apt: deb="/home/vagrant/binary/Ubuntu~bionic_amd64.deb"
 
 - apt_repository:
    repo: "ppa:webupd8team/atom"
@@ -29,23 +25,10 @@
 - name: Download Atom Latest Version
   get_url:
     url: https://atom.io/download/deb
-    dest: "/vagrant/binary/atom.deb"
+    dest: "/home/vagrant/binary/atom.deb"
     mode: 0774
 
 - name: Install ATOM Latest Version
-  apt: "deb=/vagrant/binary/atom.deb"
+  apt: "deb=/home/vagrant/binary/atom.deb"
 
 
-
-#- name: ensure mod_wsgi enabled
-#  apache2_module: state=present name=wsgi
-#  notify: restart apache2
-
-#- name: de-activate default apache site
-#  file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
-#  notify: restart apache2
-
-#- name: ensure apache2 started
-#  service: name=apache2 state=started enabled=yes
-
-# tasks file for apache2
