@@ -2,11 +2,11 @@
 - name: Download Team Viewer Latest Version
   get_url:
     url: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-    dest: /vagrant/binary/teamviewer_amd64.deb
+    dest: /home/vagrant/PrepareVM-master/teamviewer_amd64.deb
     mode: 0774
 
 - name: Install Team Viewer Latest Version
-  apt: deb="/home/vagrant/binary/teamviewer_amd64.deb"
+  apt: deb="/home/vagrant/PrepareVM-master/teamviewer_amd64.deb"
 
 - name: Download Virtal Box Version 5.1
   get_url:
@@ -15,7 +15,7 @@
     mode: 0774
 
 - name: Install VirtualBox Version 5.1
-  apt: deb="/home/vagrant/binary/Ubuntu~bionic_amd64.deb"
+  apt: deb="/home/vagrant/PrepareVM-master/Ubuntu~bionic_amd64.deb"
 
 - apt_repository:
    repo: "ppa:webupd8team/atom"
@@ -25,10 +25,10 @@
 - name: Download Atom Latest Version
   get_url:
     url: https://atom.io/download/deb
-    dest: "/home/vagrant/binary/atom.deb"
+    dest: "/home/vagrant/PrepareVM-master/atom.deb"
     mode: 0774
 
 - name: Install ATOM Latest Version
-  apt: "deb=/home/vagrant/binary/atom.deb"
+  apt: "deb=/home/vagrant/PrepareVM-master/atom.deb"
 
 
